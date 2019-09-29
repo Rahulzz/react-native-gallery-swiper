@@ -59,7 +59,7 @@ export default class GallerySwiper extends PureComponent {
         this.activeImageResponder = this.activeImageResponder.bind(this);
     }
 
-    componentWillMount () {
+    componentDidMount () {
         let onResponderReleaseOrTerminate = (evt, gestureState) => {
             if (this.activeResponder) {
                 if (this.activeResponder === this.viewPagerResponder &&
@@ -168,9 +168,7 @@ export default class GallerySwiper extends PureComponent {
                 clearTimeout(this._longPressTimeout);
             }
         };
-    }
 
-    componentDidMount () {
         this._isMounted = true;
     }
 

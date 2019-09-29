@@ -56,16 +56,13 @@ export default class TransformableImage extends PureComponent {
         };
     }
 
-    componentWillMount () {
+    componentDidMount () {
         if (!this.state.source) {
             this.getImageSource(this.props.image);
         }
         if (!this.state.imageDimensions) {
             this.getImageSize(this.props.image);
         }
-    }
-
-    componentDidMount () {
         this._mounted = true;
     }
 
